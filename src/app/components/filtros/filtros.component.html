@@ -1,0 +1,53 @@
+<div class="container">
+
+    <div>
+
+    <mat-form-field class="buscador" appearance="outline">
+
+      <input [(ngModel)]="texto" (keyup)="changeText($event)" matInput placeholder=" &#61442;  Buscar">
+
+    </mat-form-field>
+
+
+
+    <h3>Categorias:</h3>
+    <mat-selection-list #categories [(ngModel)]="tipoAux"
+                        [multiple]="false"
+                        (selectionChange)="changeCategory($event)">
+      <mat-list-option *ngFor="let tipo of categoria" [value]="tipo">{{tipo | titlecase}}</mat-list-option>
+    </mat-selection-list>
+
+
+<!--     <mat-form-field appearance="fill">
+      <mat-label>Tipo de producto</mat-label>
+      <mat-select [(ngModel)]="filtro.tipo" (selectionChange)="changeCategory($event)">
+        <mat-option *ngFor="let tipo of categoria" [value]="tipo">{{tipo | titlecase}}</mat-option>
+      </mat-select>
+    </mat-form-field> -->
+
+    <h3>Colores:</h3>
+    <div class="selectorColores">
+      <div class="colores tooltip" (click)="changeColor($event)" *ngFor="let color of colores" [value]="color">
+        <div class="btn-color">
+          <svg height="50" width="50">
+            <circle cx="25" cy="25" r="22" stroke="white" stroke-width="4" fill="lightgrey" />
+            <circle class="btncircle" cx="25" cy="25" r="17" stroke="white" stroke-width="4" [ngClass]="color" />
+          </svg>
+          <span class="tooltiptext">{{color | titlecase}}</span>
+        </div>
+      </div>
+    </div>
+    <!-- <mat-form-field appearance="fill">
+      <mat-label>Colores</mat-label>
+      <mat-select [(ngModel)]="filtro.color" (selectionChange)="changeColor($event)">
+        <mat-option *ngFor="let color of colores" [value]="color">{{color | titlecase}}</mat-option>
+      </mat-select>
+    </mat-form-field> -->
+
+  </div>
+  <div class="slider">
+    <h3>Filtrar por precio:</h3>
+    <ngx-slider (highValueChange)="changeSliderUpperPrice($event)" (valueChange)="changeSliderLowerPrice($event)" [(value)]="value" [(highValue)]="highValue" [options]="options"></ngx-slider>
+  </div>
+
+</div>

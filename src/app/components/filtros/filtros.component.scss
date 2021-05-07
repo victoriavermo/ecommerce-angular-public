@@ -1,0 +1,121 @@
+@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+
+
+.container{
+  display: block;
+  margin: 20px;
+}
+
+.slider{
+  width: 100%;
+}
+
+.mat-form-field{
+
+  border-radius: 80px!important;
+  width: 100%;
+}
+
+.buscador{
+
+  color: inherit;
+  cursor: text;
+}
+
+input{
+  font-family: Arial, FontAwesome;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-end {
+  border-radius: 0px !important;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-start {
+  border-radius: 0px !important;
+}
+
+.colores{
+  display: inline-flex;
+  cursor: pointer;
+  flex-direction: row;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 100px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  margin-left: -50px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+h3{
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
+mat-selection-list, mat-form-field{
+  margin-bottom: 1.5rem;
+}
+
+
+.todos{
+  fill: white;
+}
+.negro{
+  fill: #101517;
+}
+.azul{
+  fill:#173F5F;
+}
+.marron{
+  fill: #614200;
+}
+.bordo{
+  fill: #691c1c;
+}
+.rojo{
+  fill: #d63638;
+}
+.blanco{
+  fill: whitesmoke;
+}
+.verde{
+  fill: #005c12;
+}
+
+svg .btncircle:hover {
+  stroke: lightgrey;
+}
+
+.selectorColores{
+  margin-bottom: 2rem;
+}
+
+

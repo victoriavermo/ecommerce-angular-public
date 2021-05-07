@@ -1,0 +1,130 @@
+
+<!-- <button mat-icon-button color="primary" aria-label="Button home icon" (click)="navegarTienda()">
+  <mat-icon>home</mat-icon>
+</button> -->
+
+<button mat-icon-button color="primary" (click)="volver()">
+  <mat-icon><span class="material-icons-outlined">
+    chevron_left
+    </span></mat-icon>
+</button>
+
+
+<!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+  {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+</button>  -->
+
+<div class="container">
+  <mat-vertical-stepper [linear]="isLinear" #stepper>
+    <mat-step>
+      <ng-template matStepLabel>Cesta</ng-template>
+      <app-carrito></app-carrito>
+      <div>
+        <b>TOTAL A PAGAR: </b>{{importePagar | currency:'EUR'}}
+      </div>
+      <div>
+        <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+      </div>
+    </mat-step>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+
+        <ng-template matStepLabel>Datos personales</ng-template>
+
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input matInput placeholder="Nombre" formControlName="nombre">
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Primer apellido</mat-label>
+            <input matInput placeholder="Primer apellido" formControlName="apellido1">
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Segundo apellido</mat-label>
+            <input matInput placeholder="Segundo apellido" formControlName="apellido2">
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Móvil</mat-label>
+            <input matInput placeholder="Móvil" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" min="1" maxlength="9" type="text" formControlName="telefono" required>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Mail</mat-label>
+            <input matInput placeholder="Correo electrónico" formControlName="email" required>
+          </mat-form-field>
+        </div>
+
+
+        <div>
+          <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
+        </div>
+
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Dirrección de entrega</ng-template>
+
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Ciudad</mat-label>
+            <input matInput formControlName="ciudad" placeholder="Ex. Barcelona"
+                   required>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>CP</mat-label>
+            <input matInput formControlName="cp" placeholder="Ex. 08830"
+                   required>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Calle</mat-label>
+            <input matInput formControlName="direccion" placeholder="Ex. Av Diagonal 134"
+                   required>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <button mat-raised-button matStepperPrevious>Atrás</button>
+          <button mat-raised-button color="primary" matStepperNext (click)="guardar()">Siguiente</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Pago</ng-template>
+      <div id="myPaypalButtons"></div>
+
+    </mat-step>
+    <mat-step *ngIf="paid">
+      <h2>¡Gracias por tu compra!</h2>
+      <div>
+        <img src="https://m.gifmania.com/Gif-Animados-Objetos/Imagenes-Hogar/Carros-Compra/Cachorro-Con-Carrito-90319.gif" alt="">
+      </div>
+      <div>
+        <button mat-raised-button matStepperPrevious>Back</button>
+        <button mat-raised-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-vertical-stepper>
+
+</div>
+
+
+

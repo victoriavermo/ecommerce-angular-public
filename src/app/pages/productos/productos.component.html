@@ -1,0 +1,70 @@
+<div class="grid">
+  <div class="cont1">
+    <app-filtros (filtrarProductos)="filtrarProductos($event)"></app-filtros>
+  </div>
+
+  <div class="cont2">
+
+      <div class="grid-productos">
+         <div class="product-card" (click)="navegar(i.url)" *ngFor="let i of productosMostrar">
+           <div class="product-card__body" (mouseover)="minis=true; prodActual=i.url" (mouseout)="minis=false">
+              <div class="product-card__img-container">
+                <button id="btnlike" [ngClass]="(i.img.length > 1 && mostrarMinis(i)) ? 'favbtn-xitems' : 'favbtn-1item'" [ngStyle]="{'color': i.fav ? 'red' : 'white' }" (click)="listaFav($event,i)" mat-icon-button class="favbtn">
+                  <span class="material-icons">favorite</span>
+                </button>
+                <!-- <img class="product-card__img" src="/assets/img/{{mostrarColor(i)}}" alt=""> -->
+                <img class="product-card__img" src="/assets/img/{{i | mostrarColor : auxColor}}" alt="">
+                <div>
+                  <div *ngIf="i.img.length > 1 && mostrarMinis(i)" [@fadeInOut] class="product-card__img-minis">
+                    <span *ngFor="let img of i.img">
+                      <img class="mini" *ngIf="img !== (i | mostrarColor : auxColor)" src="/assets/img/{{img}}" alt="">
+                    </span>
+                    <!-- <img class="mini" *ngFor="let img of i.img" src="/assets/img/{{img}}" alt=""> -->
+                  </div>
+                </div>
+
+              </div>
+              <div class="product-card__info">
+                <div class="product-card__title">{{i.nombre}}</div>
+                <div class="product-card__colorsnum">{{i.colores.length}} colores</div>
+                <div *ngIf="i.precioOferta">
+                  <div class="product-card__priceSale">{{ i.precio | currency:'EUR'}}</div>
+                  <span class="product-card__price">{{ i.precioOferta | currency:'EUR'}}</span>
+                </div>
+                <div *ngIf="!i.precioOferta">
+                  <div class="product-card__price">{{ i.precio | currency:'EUR'}}</div>
+                </div>
+
+              </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <!-- <div class="container">
+        <mat-card class="example-card" (click)="navegar(i.url)">
+          <mat-card-header>
+            <mat-card-title>{{i.nombre}}</mat-card-title>
+            <mat-card-subtitle> {{ i.precio | currency:'EUR'}}</mat-card-subtitle>
+          </mat-card-header>
+          <div>
+            <img mat-card-image src="/assets/img/{{i.img[0]}}" alt="">
+            <mat-chip-list class="mat-chip-list-stacked" style="float: right;">
+              <div class="mat-chip-ripple">
+                <span class="material-icons {{i.color}}">circle</span>
+              </div>
+            </mat-chip-list>
+          </div>
+
+
+        </mat-card>
+      </div> -->
+
+
+  </div>
+
+
+
+</div>

@@ -1,0 +1,34 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orelega+One&display=swap');
+
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  text-align: center;
+  padding: 20px;
+}
+
+.title {
+  margin: auto;
+  font-size: 2rem;
+  font-family: 'Orelega One', cursive;;
+
+}
+.mat-toolbar{
+  background: black;
+  width: 100vw;
+}
+
+@media  (max-width: 500px) {
+
+  // .mat-toolbar-row, .mat-toolbar-single-row {
+  //   display: block;
+  // }
+  span{
+    margin: 5rem;
+  }
+}

@@ -1,0 +1,10 @@
+
+<button mat-button [matMenuTriggerFor]="beforeMenu">{{importePagar|currency:'EUR'}}</button>
+  <!-- <mat-chip color="primary">
+    {{importePagar|currency:'EUR'}}
+  </mat-chip> -->
+  <mat-menu #beforeMenu="matMenu" xPosition="before">
+    <app-carrito></app-carrito>
+  </mat-menu>
+
+

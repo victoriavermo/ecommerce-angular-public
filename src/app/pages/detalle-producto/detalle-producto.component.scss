@@ -1,0 +1,287 @@
+h1, h2, p{
+  text-align: center;
+}
+.title{
+  margin-top: 25px;
+}
+p{
+  margin-bottom: 15px;
+  padding: 20px;
+}
+
+.btn {
+  background-color: white;
+  color: black;
+  border: 2px solid #1c1c1c;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: auto;
+  cursor: pointer;
+}
+.btn {
+  transition-duration: 0.4s;
+}
+
+.btn:hover {
+  background-color: #303030; /* Green */
+  color: white;
+}
+
+.btn, mat-form-field{
+  text-align: center;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+}
+mat-form-field{
+  width: 55%;
+  max-width: fit-content;
+}
+.mat-chip-list-wrapper {
+  flex-direction: column;
+  align-items: center;
+  margin: 4px;
+}
+
+mat-chip {
+  max-width: 100px;
+  display: inline;
+  justify-content: center;
+}
+
+// .galeria{
+//   display: block;
+//   display: flex;
+//   flex-direction: row;
+//   margin-bottom: 20px;
+// }
+
+
+// .imagenes{
+
+//   display: inline-flex;
+//   justify-content: center;
+//   width: 100%;
+// }
+
+// img{
+//   width: 18rem;
+//   height: 32rem;
+// }
+
+.selectorColores{
+  margin: 0 auto;
+}
+
+.verde {
+  background-color: green !important;
+  color: white;
+}
+.marron {
+  background-color: burlywood !important;
+}
+.rojo {
+  background-color: red !important;
+  color: white;
+}
+
+.negro {
+  background-color: black !important;
+  color: white;
+  text-align: center;
+}
+.blanco {
+  background-color: white !important;
+  color: black !important;
+}
+.azul {
+  background-color: rgb(32, 32, 148) !important;
+  color: white;
+}
+.celeste {
+  background-color: rgb(68, 224, 230) !important;
+}
+.bordo {
+  background-color: rgb(114, 41, 41) !important;
+  color: white;
+}
+// para los icons
+.verde-icon {
+  color: green !important;
+  }
+
+  .marron-icon {
+  color: burlywood !important;
+  }
+
+  .rojo-icon {
+  color: red !important;
+  }
+
+  .negro-icon {
+  color: black !important;
+  }
+
+  .blanco-icon {
+  color: white !important;
+  }
+
+  .azul-icon {
+  color: rgb(32, 32, 148) !important;
+  }
+
+  .celeste-icon {
+  color: rgb(68, 224, 230) !important;
+  }
+
+  .bordo-icon {
+  color: rgb(114, 41, 41) !important;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  }
+
+
+  /* Firefox */
+
+  input[type=number] {
+  -moz-appearance: textfield;
+  }
+
+
+  .cont1{
+
+    align-self: flex-start;
+    margin: 0 25px;
+    padding: 25px;
+    width: 160rem;
+
+  }
+  .cont2{
+
+    margin-top: 2rem;
+    padding: 50px;
+  }
+
+  .grid{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .grid-productos{
+
+    justify-content: center;
+    margin: 0 auto;
+
+  }
+  .mini{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  .img-minis{
+    height: 80px;
+  }
+
+  .product-card{
+    max-width: 50.8rem;
+    z-index: 1;
+
+    &__body {
+      position: relative;
+      display: grid;
+      grid-template-rows: 60% 40%;
+
+    }
+
+    &__img-container{
+      display: flex;
+
+      img{
+        width: 100%;
+        height: auto;
+        margin-right: 0.5rem;
+
+      }
+
+      .mini{
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        margin-right: 0.7rem;
+        margin-top: 0.1rem;
+        cursor: pointer;
+      }
+
+      .img-minis{
+        height: 40px;
+        margin-left: 0.2rem;
+      }
+
+    }
+
+    &__info{
+      position: relative;
+      padding: 1.2rem 0px 0.2rem;
+      min-height: 18.5rem;
+      font-size: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      justify-items:left;
+
+      .product-card__title {
+        font-weight: bold;
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+      }
+      .product-card__price {
+        font-weight: bold;
+        font-size: 1.4rem;
+        display: inline-block;
+      }
+      .product-card__priceSale{
+        font-weight: normal;
+        font-size: 1.4rem;
+        text-decoration:line-through 1px;
+        color: grey;
+        display: inline-block;
+        margin-right: 0.5rem;
+
+      }
+    }
+
+    .mat-icon-button{
+      background: rgba(0, 0, 0, 0.179);
+    }
+
+
+  }
+
+  @media  (max-width: 500px) {
+
+    .cont1{
+      grid-column: 1;
+      grid-row: 1;
+      position: relative;
+    }
+
+    .cont2{
+      grid-column: 1;
+      grid-row: 2;
+      width: 94vw;
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+
+
+  }
+
+

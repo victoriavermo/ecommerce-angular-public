@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "shop-angular-7b537"
+  },
+  "targets": {
+    "shop-angular-7b537": {
+      "hosting": {
+        "shop": [
+          "shop-angular-7b537"
+        ]
+      }
+    }
+  }
+}

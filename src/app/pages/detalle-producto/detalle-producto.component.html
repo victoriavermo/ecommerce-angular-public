@@ -1,0 +1,121 @@
+
+<div *ngIf="producto" class="grid">
+  <div class="cont1">
+    <div class="grid-productos">
+      <div class="product-card" >
+        <div class="product-card__body">
+           <div class="product-card__img-container">
+             <img class="product-card__img" src="/assets/img/{{producto | mostrarColor : auxColor}}" alt="">
+             <div>
+               <div *ngIf="producto.img.length > 1" class="product-card__img-minis">
+                 <span *ngFor="let img of producto.img">
+                   <img class="mini" *ngIf="img !== (producto | mostrarColor : auxColor)" src="/assets/img/{{img}}" alt="" (click)="cambiarImg(img)">
+                 </span>
+               </div>
+             </div>
+
+           </div>
+       </div>
+     </div>
+    </div>
+  </div>
+
+  <div class="cont2">
+    <div class="product-card__info">
+      <div class="product-card__title">{{producto?.nombre}}</div>
+      <div class="product-card__description">{{producto.descripcion}}</div>
+      <div *ngIf="producto.precioOferta">
+        <div class="product-card__priceSale"> {{ producto?.precio | currency:'EUR'}}</div>
+        <span class="product-card__price"> {{ producto?.precioOferta | currency:'EUR'}}</span>
+      </div>
+      <div *ngIf="!producto.precioOferta">
+        <div class="product-card__price"> {{ producto?.precio | currency:'EUR'}}</div>
+      </div>
+    </div>
+
+    <div class="selectorColores">
+      <mat-chip-list class="mat-chip-list-wrapper" aria-label="Color selection">
+        <mat-chip (click)="seleccionoColor(chip)"
+        *ngFor="let chip of producto.colores"
+        selected
+        class="{{ chip }}"
+        >
+        {{ chip | titlecase }}
+        </mat-chip>
+      </mat-chip-list>
+    </div>
+
+
+    <mat-form-field *ngIf="color" appearance="outline">
+      <mat-label>{{color | titlecase }}</mat-label>
+      <input onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" min="0" maxlength="9" type="number" [(ngModel)]="cantidad" matInput placeholder="Cantidad">
+      <mat-icon style="cursor: pointer" matSuffix class="{{ color }}-icon" (click)="add()">add_circle</mat-icon>
+      <mat-icon style="cursor: pointer" matPrefix class=" {{ color }}-icon" (click)="remove()">remove_circle</mat-icon>
+    </mat-form-field>
+
+    <app-carrito *ngIf="showPagar"></app-carrito>
+
+
+
+    <button *ngIf="showAgregar" class="btn" (click)="agregar()">AGREGAR A LA CESTA</button>
+
+   </div>
+
+</div>
+
+
+
+
+
+
+
+<!-- <div *ngIf="producto">
+  <div class="title">
+    <h1>{{producto?.nombre}}</h1>
+    <h2>{{producto?.precio | currency:'EUR'}}</h2>
+  </div>
+
+
+  <div class="galeria">
+    <div class="imagenes" *ngFor="let i of producto.img">
+      <img src="/assets/img/{{ i }}">
+    </div>
+  </div>
+  <p>{{producto.descripcion}}</p>
+
+  <p>
+    <b>Selecciona color:</b>
+  </p>
+  <div class="selectorColores">
+    <mat-chip-list class="mat-chip-list-wrapper" aria-label="Color selection">
+      <mat-chip (click)="seleccionoColor(chip)"
+      *ngFor="let chip of producto.colores"
+      selected
+      class="{{ chip }}"
+      >
+      {{ chip | titlecase }}
+      </mat-chip>
+    </mat-chip-list>
+  </div>
+
+
+  <mat-form-field *ngIf="color" appearance="outline">
+    <mat-label>{{color | titlecase }}</mat-label>
+    <input onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" min="0" maxlength="9" type="number" [(ngModel)]="cantidad" matInput placeholder="Cantidad">
+    <mat-icon style="cursor: pointer" matSuffix class="{{ color }}-icon" (click)="add()">add_circle</mat-icon>
+    <mat-icon style="cursor: pointer" matPrefix class=" {{ color }}-icon" (click)="remove()">remove_circle</mat-icon>
+  </mat-form-field>
+
+  <app-carrito *ngIf="showPagar"></app-carrito>
+
+
+
+  <button *ngIf="showAgregar" class="btn" (click)="agregar()">AGREGAR A LA CESTA</button>
+
+
+</div> -->
+
+
+<!--  mat-raised-button color='primary' mat-button -->
+
+<!-- <button *ngIf="showPagar" (click)="pagar()">PAGAR</button> -->

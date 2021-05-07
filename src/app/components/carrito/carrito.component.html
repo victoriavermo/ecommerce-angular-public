@@ -1,0 +1,16 @@
+<div *ngIf="productos">
+  <mat-card>
+    <mat-list>
+      <mat-list-item *ngFor="let p of productos">
+        <!-- {{p.id }} - {{p.color}}  - x{{p.cantidad}} -->
+        <div class="product-card__info">
+          <b><div class="product-card__title">{{p.id | titlecase}}</div></b>
+          <div class="product-card__colorsnum">Color: {{p.color | titlecase}} x{{ p.cantidad}}</div>
+          <div class="product-card__price">{{ p.precio | currency:'EUR'}}</div>
+        </div>
+        <mat-icon (click)="deleteItem(p)">delete</mat-icon>
+      </mat-list-item>
+    </mat-list>
+  </mat-card>
+</div>
+

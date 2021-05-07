@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; font-size: 10px;}
+body {
+  margin: 0 auto;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+
+ }
+
+ .ngx-slider .ngx-slider-pointer {
+
+  width: 16px!important;
+  height: 16px!important;
+  top: -7px!important;
+  background-color: #525252!important;
+
+}
+
+.ngx-slider .ngx-slider-pointer::after {
+
+  width: 4px!important;
+  height: 4px!important;
+  top: 6px!important;
+  left: 6px!important;
+
+
+}
+
+.ngx-slider .ngx-slider-selection {
+
+  background: #525252!important;
+
+}
+
+.ngx-slider .ngx-slider-pointer.ngx-slider-active::after{
+  background-color: #d8e0f3!important;
+}
